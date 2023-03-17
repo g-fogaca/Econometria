@@ -6,21 +6,20 @@ library(tidyverse)
 # importando dados
 dados <- wooldridge::wage1
 
-# Encontre o nível médio de educação na amostra.
+# Encontre o nÃ­vel mÃ©dio de educaÃ§Ã£o na amostra.
 mean(dados$educ)
 
-
 # Quantas pessoas possuem os anos mais baixos
-# e quantas os anos mais altos de educação?
+# e quantas os anos mais altos de educaÃ§Ã£o?
 dados %>% 
   select(educ) %>% 
   filter(educ == min(educ) | educ == max(educ)) %>% 
   table()
 
-# Encontre o salário médio por hora na amostra.
+# Encontre o salÃ¡rio mÃ©dio por hora na amostra.
 mean(dados$wage)
 
-# Quantas mulheres estão na amostra? Quantos homens?
+# Quantas mulheres estÃ£o na amostra? Quantos homens?
 dados %>% 
   select(female) %>% 
   table() # 0 = Homem e 1 = Mulher
